@@ -1,15 +1,27 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/*
+* Crie um programa simples que solicita dois números ao usuário e realiza a divisão do primeiro pelo segundo.
+* Utilize o bloco try/catch para tratar a exceção que pode ocorrer caso o usuário informe 0 como divisor.
+*/
+
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.print("Enter First Number: ");
+        int firstNumber = scanner.nextInt();
+
+        System.out.print("Enter Second Number: ");
+        int secondNumber = scanner.nextInt();
+
+        try {
+            int total = firstNumber / secondNumber;
+
+            System.out.println("Total is " + total);
+        }catch (ArithmeticException e){
+            System.out.println("Impossivel dividir por Zero " + e.getMessage());
         }
     }
 }
